@@ -27,10 +27,7 @@ var config = {
 
             }
         ]
-    },
-    target:"node"
-
-
+    }
 };
 
 
