@@ -10,17 +10,18 @@ export class VideoDetails extends React.Component{
         }
     }
     render(){
+        var divStyle1 = {color:'#0d47a1'};
         return(
             <ul className="collection">
-                <pre><b>Video URL:</b>{ this.props.newURL ?
+                <pre><b style={divStyle1}> Video URL:</b>{ this.props.newURL ?
                     this.props.newURL :
                     <span>No URL</span> }</pre>
 
-                <pre><b>Video Title:</b>{ this.props.data ?
+                <pre><b style={divStyle1}> Video Title:</b>{ this.props.data ?
                                     this.props.data.data.title:
                     <span>No Title</span> }</pre>
 
-                <pre><b>Download Links:</b>{ this.props.data ?
+                <pre><b style={divStyle1}> Download Links:</b>{ this.props.data ?
                         this.props.data.data.formats.map(function(listValue,i){
                             return <li className="collection-item avatar" key={i}>
                                 <p>Ext::{listValue.container}<br />
