@@ -14,20 +14,25 @@ export class SearchBox extends React.Component{
         })
     }
 
+    onClickSubmit(){
+        this.props.func(this.state.videoURL)
+    }
+
     render(){
         return(
             <div className="row">
-                <form className="col s12">
+                <div className="col s12">
                     <div className="row">
                         <h5>Paste video url below</h5>
-                        <div className="input-field col s6">
+                        <div className="input-field col s12">
                             <input placeholder="Paste URL here" id="video_url" type="text" className="validate" onChange={(event)=>this.onHandleChange(event)} value={this.state.videoURL} />
                                 <label htmlFor="video_url">Paste Here</label>
-                            <button className="waves-effect waves-light btn">Submit</button>
-                            <p>{this.state.videoURL}</p>
+                            <button onClick={()=>this.onClickSubmit()} className=" pink accent-3 btn">Submit
+                                <i className="material-icons right">send</i>
+                            </button>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
 
         );
